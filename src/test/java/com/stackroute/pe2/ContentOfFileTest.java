@@ -36,7 +36,8 @@ public class ContentOfFileTest {
     @Test
     public void givenInvalidFileShouldReturnError(){
         //act
-        String actualResult=this.filesContent.fileReader("hello.docs");
+        String fileLocation="/home/cgi/Desktop/test.txt";
+        String actualResult=this.filesContent.fileReader(fileLocation);
         //assert
         assertEquals("wrong file",actualResult);
     }
@@ -47,17 +48,20 @@ public class ContentOfFileTest {
     @Test
     public void givenFileShouldReturnContentOfFiles(){
         //act
-        String actualResult=this.filesContent.fileReader("hello.txt");
+        String fileLocation="/home/cgi/Desktop/test.txt";
+        String[] actualResult=this.filesContent.fileReader(fileLocation);
+        String[] fileContent={"ATUL","IS","BOY"};
         //assert
-        assertEquals("file content",actualResult);
+        assertArrayEquals(fileContent,actualResult);
     }
 
     @Test
     public void givenFileShouldReturnError(){
         //act
-        String actualResult=this.filesContent.fileReader();
+        String fileLocation="/home/cgi/Desktop/test.txt";
+        String actualResult=this.filesContent.fileReader(fileLocation);
         //assert
-        assertEquals("file empty",actualResult);
+        assertaEquals("file empty",actualResult);
     }
 
 
