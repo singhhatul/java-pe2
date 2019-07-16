@@ -44,7 +44,7 @@ public class NumberIsPowerOfFourTest {
 
     }
 
-    /* this function will check the given number is power of four if it is power of four then test case will pass
+    /* this function will check the given number is not power of four if it is not power of four then test case will pass
      */
     @Test
     public void givenIntegerShouldReturnFalse() {

@@ -25,31 +25,41 @@ public class ContentOfFileTest {
     */
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         filesContent= null;
+    }
+
+
+    /* this function will check the file input if it is not valid then raise a message wrong file and then
+     test case will pass
+     */
+    @Test
+    public void givenInvalidFileShouldReturnError(){
+        //act
+        String actualResult=this.filesContent.fileReader("hello.docs");
+        //assert
+        assertEquals("wrong file",actualResult);
+    }
+    /* this function will check the file input if it is valid then read file content and sent it back if both the
+    data are same then match the file content.
+     */
+
+    @Test
+    public void givenFileShouldReturnContentOfFiles(){
+        //act
+        String actualResult=this.filesContent.fileReader("hello.txt");
+        //assert
+        assertEquals("file content",actualResult);
     }
 
     @Test
     public void givenFileShouldReturnError(){
         //act
-        String actualResult=this.filesContent.readingFile();
+        String actualResult=this.filesContent.fileReader();
         //assert
-        assertEquals(,actualResult);
+        assertEquals("file empty",actualResult);
     }
-    @Test
-    public void givenFileShouldReturnError(){
-        //act
-        String actualResult=this.filesContent.readingFile();
-        //assert
-        assertEquals(,actualResult);
-    }
-    @Test
-    public void givenFileShouldReturnError(){
-        //act
-        String actualResult=this.filesContent.readingFile();
-        //assert
-        assertEquals(,actualResult);
-    }
+
 
 
 }
