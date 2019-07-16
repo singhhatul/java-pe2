@@ -36,6 +36,20 @@ public class ContentOfFileTest {
         //assert
         assertEquals(,actualResult);
     }
+    @Test
+    public void givenFileShouldReturnError(){
+        //act
+        String actualResult=this.filesContent.readingFile();
+        //assert
+        assertEquals(,actualResult);
+    }
+    @Test
+    public void givenFileShouldReturnError(){
+        //act
+        String actualResult=this.filesContent.readingFile();
+        //assert
+        assertEquals(,actualResult);
+    }
 
 
 }

@@ -6,8 +6,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class EvenNumTest {
-    EvenNum evenNumber;
+public class EvenNumberTest {
+    EvenNumber evenNumber;
 
     /* @Before annotation is used on a method containing Java
   code to run before each test case. i.e it runs before each test execution.
@@ -16,7 +16,7 @@ public class EvenNumTest {
     @Before
     public void setUp() {
         //arrange
-        this.evenNumber = new EvenNum();
+        this.evenNumber = new EvenNumber();
     }
 
        /*  @After annotation is used on a method containing java code to run after each test case.
@@ -52,6 +52,30 @@ public class EvenNumTest {
         boolean actualResult = this.evenNumber.isEven(33);
         //assert
         assertEquals(false, actualResult);
+
+    }
+    /* this function will check the given number is negative if it is negative returnn false and test case will pass
+     */
+
+    @Test
+    public void givenNegativeIntegerShouldReturnFalse() {
+        //act
+        boolean actualResult = this.evenNumber.isEven(-20);
+        //assert
+        assertEquals(false, actualResult);
+
+    }
+    /* this function will check the given number is null if it is null returnn false and test case will pass
+     */
+
+    @Test
+    public void givenNullShouldReturnFalse() {
+        //act
+        boolean actualResult = this.evenNumber.isEven();
+        //assert
+        assertEquals(false, actualResult);
+
+
 
     }
 

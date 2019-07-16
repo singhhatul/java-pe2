@@ -5,7 +5,7 @@ package com.stackroute.pe2;
         an int as input and returns true if the input is even. The signature of the method is as
         follows: public static boolean isEven(int number)*/
 
-public class EvenNum {
+public class EvenNumber {
 
     }
 }
