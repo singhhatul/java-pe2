@@ -1,5 +1,6 @@
-package com.stackroute.pe2;
+package com.stackroute.pe3;
 
+import com.stackroute.pe2.StudentGrades;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,55 +8,61 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class StudentGradesTest {
-    StudentGrades grades;
+   StudentGrades studentGrades;
 
     /* @Before annotation is used on a method containing Java
-  code to run before each test case. i.e it runs before each test execution.
-  In the setup method ,object of class is declared
-  */
+    code to run before each test case. i.e it runs before each test execution.
+I   n the setup method ,object of class is declared
+    */
     @Before
-    public void setUp() {
+    public void setUp()  {
         //arrange
-        this.grades = new StudentGrades();
+        this.studentGrades = new StudentGrades();
     }
 
     /*  @After annotation is used on a method containing java code to run after each test case.
- These methods will run even if any exceptions are thrown in the test case or in the case
- of assertion failures.
- In the tear down method ,object is initialized with null so that obj is destroyed
- */
+    These methods will run even if any exceptions are thrown in the test case or in the case
+    of assertion failures.
+    In the tear down method ,object is initialized with null so that obj is destroyed
+    */
     @After
     public void tearDown() {
 
-        grades = null;
-    }
-    /* this function will check the given number is in range and should return proper string message
-     */
-    @Test
-    public void givenNumberShouldReturnErrorIfNumberIsNotValid() {
-        String actualresult = grades.getDataOfStudent(120, 30, -20, 59);
-        assertEquals("entered proper value between range", actualresult);
-    }
-    /* this function will input 4 grades of students and should return minimum grade
-     */
-    @Test
-    public void givenNumberShouldReturnMinimum() {
-        int actualresult = grades.getDataOfStudent(80, 30, 66, 59);
-        assertEquals(30, actualresult);
-    }
-    /* this function will input 4 grades of students and should return avearge of grades
-     */
-    @Test
-    public void givenNumberShouldReturnAverage() {
-        float actualresult = grades.getDataOfStudent(80, 30, 66, 59);
-        assertEquals(58.75, actualresult,2);
-    }
-    /* this function will input 4 grades of students and should return maximum grade
-     */
-    @Test
-    public void givenNumberShouldReturnMaximum() {
-        int actualresult = grades.getDataOfStudent(80, 30, 66, 59);
-        assertEquals(80, actualresult);
+        studentGrades = null;
     }
 
+    /* this function will take input of number of students and 4 grades of students and should return
+    same output as input
+     */
+    @Test
+    public void givenInputShouldReturnSameOutput() {
+        int[] grades={12,30,60,80};
+        String actualresult = studentGrades.getGrades(4,grades);
+        assertEquals("no of students and grades are correct", actualresult);
+    }
+    /* this function will input of negative number of studnts and 4 grades of students and should return
+    error message
+     */
+    @Test
+    public void givenNegativeInputShouldReturnErrorMessage() {
+        int[] grades={12,30,60,80};
+        String actualresult = studentGrades.getGrades(-4,grades);
+        assertEquals("no of student should not be less than zero", actualresult);
+    }
+    /* this function will input 4 grades of students and should return successful message that value is in range
+     */
+    @Test
+    public void givenInputShouldReturnPassedMessage() {
+        int[] grades={20,30,60,80,70,20,0};
+        String actualresult = studentGrades.getGrades(7,grades);
+        assertEquals("no of students and grades are correct", actualresult);
+    }
+    /* this function will input 4 grades of students and should return error message that value should be in range
+     */
+    @Test
+    public void givenInputShouldReturnErrorMessage() {
+        int[] grades={120,300,-60,-80,46,0,58,90};
+        String actualresult = studentGrades.getGrades(8,grades);
+        assertEquals("grades are out of range", actualresult);
+    }
 }

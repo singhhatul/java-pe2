@@ -36,28 +36,6 @@ public class NumberIsPowerOfFourTest {
      */
 
     @Test
-    public void givenIntegerShouldReturnTrue() {
-        //act
-        String actualResult = this.numberPower.powerNumber(22);
-        //assert
-        assertEquals("True", actualResult);
-
-    }
-
-    /* this function will check the given number is not power of four if it is not power of four then test case will pass
-     */
-    @Test
-    public void givenIntegerShouldReturnFalse() {
-        //act
-        String actualResult = this.numberPower.powerNumber(22);
-        //assert
-        assertEquals("False", actualResult);
-
-    }
-    /* this function will check the given number is negative if it is null returnn false and test case will pass
-     */
-
-    @Test
     public void givenNegativeIntegerShouldReturnFalse() {
         //act
         boolean actualResult = this.numberPower.powerNumber(-20);
@@ -71,7 +49,7 @@ public class NumberIsPowerOfFourTest {
     @Test
     public void givenNullShouldReturnFalse() {
         //act
-        boolean actualResult = this.numberPower.powerNumber();
+        boolean actualResult = this.numberPower.powerNumber(30);
         //assert
         assertEquals(false, actualResult);
 

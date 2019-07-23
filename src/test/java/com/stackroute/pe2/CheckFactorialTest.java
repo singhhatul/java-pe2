@@ -72,7 +72,7 @@ public class CheckFactorialTest {
     /* this function will check the given integer is not valid long integer in range should return value not in range
      */
     @Test
-    public void givenIntegerShouldReturnNotInRange(){
+    public void givenLongIntegerShouldReturnNotInRange(){
         //act
         String actualResult = this.factorial.longFactrial(30);
         //assert

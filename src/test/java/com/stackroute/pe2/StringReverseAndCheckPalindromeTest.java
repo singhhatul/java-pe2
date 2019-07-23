@@ -63,7 +63,7 @@ public class StringReverseAndCheckPalindromeTest {
 
      */
     @Test
-    public void givenIntegerShouldReturnNotAPalindrome() {
+    public void givenIntegerShouldReturnErrorMessage() {
         //act
         String actualResult = this.stringReverseAndCheckPalindrome.reverseAndPalindrome(12345);
         //assert

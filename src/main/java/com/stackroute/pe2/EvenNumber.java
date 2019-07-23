@@ -6,6 +6,20 @@ package com.stackroute.pe2;
         follows: public static boolean isEven(int number)*/
 
 public class EvenNumber {
-
+    public static boolean isEven(int inputNumber)
+    {
+        if(inputNumber<0)
+            return false;
+        else {
+            if (inputNumber % 2 == 0)
+                return true;
+            else
+                return false;
+        }
     }
+    public static boolean isEven()
+    {
+        return false;
+    }
+
 }
